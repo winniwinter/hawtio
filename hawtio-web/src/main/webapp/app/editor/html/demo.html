@@ -1,13 +1,4 @@
-<div data-ng-controller="Editor.RenderCtrl as editor"
-     data-ng-init="editor.readonly=false">
-    <section ui-ace="editor.aceOption"
-             data-ng-model="editor.ascii"
-             dropfile >
-    </section>
-    <div asciidoc="editor.ascii"
-         asciidoc-opts="editor.asciidocOpts"
-         asciidoc-no-watch="editor.readonly"
-         asciidoc-post-processor="editor.asciiPostProcessor"
-         class="viewer">
-    </div>
-</div>
+<section ng-controller="Editor.AceCtrl">
+    <div ui-ace="aceOption" ng-model="aceModel"></div>
+    <select ng-model="mode" ng-options="m for m in modes" ng-change="modeChanged()"></select>
+</section>

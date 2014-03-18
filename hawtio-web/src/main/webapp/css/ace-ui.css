@@ -1,15 +1,17 @@
 .ace_editor {
     position: fixed !important;
-    width: 50%;
-    top:   10%;
-    bottom:  0;
-    left:    0;
+    width:  50%;
+    top:    50px;
+    height: 800px;
+    bottom:   0;
+    left:     0;
 }
 
 .viewer {
     position: fixed !important;
     width:    50%;
-    top:       0;
+    height:  800px;
+    top:      50px;
     bottom:    0;
     right:     0;
     padding:  15px;

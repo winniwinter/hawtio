@@ -1,0 +1,12 @@
+<div ng-controller='Editor.RenderCtrl'>
+    <div ui-ace='aceOption' ng-model='ascii' dropfile></div>
+    <div asciidoc="ascii" asciidoc-opts="asciidocOpts" asciidoc-no-watch="readonly" class="viewer"></div>
+    <div>
+    Mode : <select class=nomargin"
+                   ng-model="theme"
+                   ng-options="t for t in themes"
+                   ng-change="themeChanged()"
+                   style='width:10%; top: 25%;'>
+    </select>
+    </div>
+</div>
