@@ -1,0 +1,17 @@
+.ace_editor {
+    position: fixed !important;
+    width: 50%;
+    top:   10%;
+    bottom:  0;
+    left:    0;
+}
+
+.viewer {
+    position: fixed !important;
+    width:    50%;
+    top:       0;
+    bottom:    0;
+    right:     0;
+    padding:  15px;
+    overflow-y: auto;
+}

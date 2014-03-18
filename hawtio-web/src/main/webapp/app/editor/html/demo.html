@@ -1,0 +1,13 @@
+<div data-ng-controller="Editor.RenderCtrl as editor"
+     data-ng-init="editor.readonly=false">
+    <section ui-ace="editor.aceOption"
+             data-ng-model="editor.ascii"
+             dropfile >
+    </section>
+    <div asciidoc="editor.ascii"
+         asciidoc-opts="editor.asciidocOpts"
+         asciidoc-no-watch="editor.readonly"
+         asciidoc-post-processor="editor.asciiPostProcessor"
+         class="viewer">
+    </div>
+</div>
