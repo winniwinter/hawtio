@@ -3,34 +3,6 @@
  */
 module Editor {
 
-    export function TodoCtrl($scope) {
-        $scope.todos = [
-            {text: 'learn angular', done: true},
-            {text: 'build an angular app', done: false}
-        ];
-
-        $scope.addTodo = function () {
-            $scope.todos.push({text: $scope.todoText, done: false});
-            $scope.todoText = '';
-        };
-
-        $scope.remaining = function () {
-            var count = 0;
-            angular.forEach($scope.todos, function (todo) {
-                count += todo.done ? 0 : 1;
-            });
-            return count;
-        };
-
-        $scope.archive = function () {
-            var oldTodos = $scope.todos;
-            $scope.todos = [];
-            angular.forEach(oldTodos, function (todo) {
-                if (!todo.done) $scope.todos.push(todo);
-            });
-        };
-    }
-
     export function RenderCtrl($scope) {
 
         // The Themes
@@ -61,12 +33,11 @@ module Editor {
 
         // The ui-ace option
         $scope.aceOption = {
-            mode:     'asciidoc',
+            mode:     'XLLLLL',
             theme:    $scope.theme.toLowerCase(),
-            fontsize: '16px',
-            onLoad: function (acee) {
+            onLoad: function (_ace) {
                 $scope.themeChanged = function () {
-                    acee.setTheme('ace/theme/' + $scope.theme.toLowerCase());
+                    _ace.setTheme('ace/theme/' + $scope.theme.toLowerCase());
                 };
             }
         };
@@ -74,18 +45,6 @@ module Editor {
         $scope.ascii=  '== Write some text or drop an AsciiDoc file in editor area\n';
         $scope.ascii+= '== <-';
 
-
-        $scope.onDragOver = function (event) {
-            console.log(event);
-        };
-
-        $scope.onDragEnter = function (event) {
-            console.log(event);
-        };
-
-        $scope.onDragLeave = function (event) {
-            console.log(event);
-        };
     }
 
     export function AceCtrl($scope) {
