@@ -110,7 +110,7 @@ module Log {
     });
 
     $scope.selectedClass = ($index) => {
-      if ($index === $scope.selectedRowSortSeq) {
+        if ($index === $scope.selectedRowIndex) {
         return 'selected';
       }
       return '';
