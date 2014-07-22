@@ -175,13 +175,13 @@ module Core {
       window.close();
     };
 
-    $scope.setPageTitle = () => {
+    $scope._setPageTitle = () => {
       $scope.pageTitle = pageTitle.getTitleArrayExcluding([branding.appName]);
-      var tab = workspace.getActiveTab();
+      var tab:{content:any} = workspace.getActiveTab();
       if (tab && tab.content) {
         setPageTitleWithTab($document, pageTitle, tab.content);
       } else {
-        setPageTitle($document, pageTitle);
+        Core.setPageTitle($document, pageTitle);
       }
     };
 
@@ -269,7 +269,7 @@ module Core {
     });
 
     $scope.$on('$routeChangeSuccess', function() {
-      $scope.setPageTitle();
+      $scope._setPageTitle();
       $scope.setRegexIndicator();
     });
 
